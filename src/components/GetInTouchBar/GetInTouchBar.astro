@@ -1,0 +1,153 @@
+---
+import EmailSvg from '../../assets/svgs/email.svg';
+import LinkedinSvg from '../../assets/svgs/linkedin.svg';
+import PhoneSvg from '../../assets/svgs/phone.svg';
+import ResumeSvg from '../../assets/svgs/resume.svg';
+
+const { lang } = Astro.props;
+
+const isEn = lang === 'en';
+
+const props = {
+  action: getAction(),
+  email: getEmail(),
+  phone: getPhone(),
+  resume: getResume(),
+}
+function getEmail() {
+  return isEn
+    ? { 
+      title: 'Get in touch by email',
+      alt: 'Click to send me an email',
+      target: "mailto:guilherme@battoni.dev?subject=Let's connect!&body=Add here the subject you want to discuss : )"
+    }
+    : {
+      title: 'Entre em contato via e-mail',
+      alt: 'Clique para me enviar um e-mail',
+      target: "mailto:guilherme@battoni.dev?subject=Vamos nos conectar!&body=Insira aqui sua mensagem : )"
+    };
+}
+
+function getPhone() {
+  return isEn
+   ? { 
+      title: 'Send me a Whastapp message',
+      alt: 'Click to send me a Whatsapp message',
+      target: "https://api.whatsapp.com/send?phone=5519987711780&text=Hey%20there%20Guilherme!%20I've%20just%20saw%20your%20website%20and%20I%20want%20to%20connect!"
+    }
+   : {
+      title: 'Me envie um Whatsapp',
+      alt: 'Clique para me enviar um Whatsapp',
+      target: 'https://api.whatsapp.com/send?phone=5519987711780&text=Ol%C3%A1%20Guilherme!%20Acessei%20seu%20site%20e%20gostaria%20de%20me%20conectar%20contigo!'
+   };
+}
+
+function getAction() {
+  return isEn
+    ? ['Connect', 'with me']
+    : ['Entre em', 'contato'];
+}
+
+function getResume() {
+  return isEn
+    ? { 
+        target: 'https://guilherme.battoni.dev/guilherme-battoni-resume.pdf',
+        fileName: 'guilherme-battoni-resume.pdf',
+        title: 'Download my resume', 
+        alt: 'Click to download my resume'
+      }
+    : { 
+        target: 'https://guilherme.battoni.dev/guilherme-battoni-curriculum.pdf',
+        fileName: 'guilherme-battoni-curriculum.pdf',
+        title: 'Faça o download do meu curriculum',
+        alt: 'Clique para fazer o download do meu curriculum'
+      };
+}
+---
+
+<section class="get-in-touch alignment bg-black">
+  <div class="alignment">
+    <h2 class="contact text-mono text-green">{props.action[0]} <br/> {props.action[1]}</h2>
+  </div>
+
+  <div class="gateways alignment">
+    <a href={props.resume.target} download={props.resume.fileName}>
+      <img class="resume" alt={props.resume.alt} title={props.resume.title} src={ResumeSvg.src} /> 
+    </a>
+
+    <a href={props.phone.target} target="_blank">
+      <img class="phone" src={PhoneSvg.src} alt={props.phone.alt} title={props.phone.title} />
+    </a>
+
+    <a href="https://www.linkedin.com/in/guilhermebattoni/" target="_blank">
+      <img class="linkedin" src={LinkedinSvg.src}/>
+    </a>
+
+    <a href={props.email.target} target="_blank">
+      <img class="email" src={EmailSvg.src} alt={props.email.alt} title={props.email.title}/>
+    </a>
+  </div>
+</section>
+
+<style>
+  .alignment {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .get-in-touch {
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    font-size: 0.75rem;
+    height: 60%;
+    padding: 50px 25px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    left: 40px
+  }
+
+  .contact {
+    text-transform: uppercase;
+  }
+
+  .arrow {
+    width: 15px;
+  }
+
+  .gateways {
+    gap: 70px;
+  }
+
+  .phone {
+    width: 25px;
+  }
+
+  .linkedin {
+    width: 35px;
+  }
+
+  .email,
+  .resume {
+    width: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .get-in-touch {
+      font-size: 0.85rem;
+      left: 180px;
+      padding: 50px 30px;
+    }
+  }
+
+  @media (min-height: 1024px) and (min-width: 768px) {
+    .get-in-touch {
+      left: 160px;
+      height: 65%;
+      padding: 50px 40px;
+    }
+  }
+</style>

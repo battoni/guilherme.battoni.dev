@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 26" style="enable-background:new 0 0 16 26;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#C0E021;}
+	.st1{display:none;}
+	.st2{display:inline;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<g id="Camada_1">
+	<g>
+		<path class="st0" d="M13,0H2.5C2.22,0,2,0.22,2,0.5v1h0C2,1.78,1.78,2,1.5,2h-1C0.22,2,0,2.22,0,2.49V23c0,1.65,1.34,3,3,3h10.5
+			c0.28,0,0.5-0.23,0.5-0.5v-1c0-0.28,0.21-0.49,0.49-0.5h1.01c0.28,0,0.5-0.23,0.5-0.5V2.99C16,1.34,14.66,0,13,0z M13.5,24H3
+			c-0.55,0-1-0.45-1-1V2.5C2,2.22,2.21,2.01,2.49,2H5v1c0,0.55,0.45,1,1,1h4c0.55,0,1-0.45,1-1V2h2c0.55,0,1,0.44,1,0.99v20.5h0
+			C14,23.78,13.78,24,13.5,24z"/>
+		<circle class="st0" cx="8" cy="21" r="1.38"/>
+	</g>
+</g>
+<g id="Camada_2" class="st1">
+</g>
+</svg>
