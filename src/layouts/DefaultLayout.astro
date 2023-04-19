@@ -12,58 +12,72 @@ const props = {
 
 function getDescription() {
   return lang !== 'pt-BR'
-  ? 'Are you looking for an experienced and skilled senior web developer? Well, your search is over! Click to connect with me!'
-  : 'Procurando por um desenvolvedor web sênior experiente para fazer parte dos seus projetos? Sua busca acaba de se encerrar. Clique aqui para entrar em contato!';
+    ? 'Are you looking for an experienced and skilled senior web developer? Well, your search is over! Click to connect with me!'
+    : 'Procurando por um desenvolvedor web sênior experiente para fazer parte dos seus projetos? Sua busca acaba de se encerrar. Clique aqui para entrar em contato!';
 }
 ---
 
-<html lang={ props.lang }>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+<html lang={props.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
 
-		<title>{props.title}</title>
-    <meta name="title" content={props.title}>
-    <meta name="description" content={ props.description }>
+    <title>{props.title}</title>
+    <meta name="title" content={props.title} />
+    <meta name="description" content={props.description} />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://guilherme.battoni.dev">
-    <meta property="og:title" content={props.title}>
-    <meta property="og:description" content={ props.description }>
-    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://guilherme.battoni.dev" />
+    <meta property="og:title" content={props.title} />
+    <meta property="og:description" content={props.description} />
+    <meta
+      property="og:image"
+      content="https://guilherme.battoni.dev/guilherme-battoni-share-cover.png"
+    />
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://guilherme.battoni.dev">
-    <meta property="twitter:title" content={props.title}>
-    <meta property="twitter:description" content={ props.description }>
-    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
-	
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://guilherme.battoni.dev" />
+    <meta property="twitter:title" content={props.title} />
+    <meta property="twitter:description" content={props.description} />
+    <meta
+      property="twitter:image"
+      content="https://guilherme.battoni.dev/guilherme-battoni-share-cover.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-	<body class="body bg-green text-black text-mono">
+  <body class="body bg-green text-black text-mono">
     <img class="logo" src={Logo.src} />
 
     <img class="logo-min" src={LogoMin.src} />
 
     <ul class="languages">
       <li>
-        <a class:list={['link', { 'is-active': props.lang === 'en'}]} href="/">English</a>
+        <a class:list={['link', { 'is-active': props.lang === 'en' }]} href="/"
+          >English</a
+        >
       </li>
       <li>
         <span class="link">|</span>
       </li>
       <li>
-        <a class:list={['link', { 'is-active': props.lang === 'pt-BR'}]} href="pt-br">Português</a>
+        <a
+          class:list={['link', { 'is-active': props.lang === 'pt-BR' }]}
+          href="pt-br">Português</a
+        >
       </li>
     </ul>
-    
+
     <slot />
-	</body>
+  </body>
 </html>
 
 <style>
@@ -87,7 +101,7 @@ function getDescription() {
     list-style-type: none;
     position: fixed;
     top: 40px;
-    right: 40px
+    right: 40px;
   }
 
   .link {
@@ -97,7 +111,7 @@ function getDescription() {
   }
 
   .link.is-active {
-    color: #FAFAFA;
+    color: #fafafa;
   }
 
   @media (min-width: 768px) {
@@ -111,33 +125,33 @@ function getDescription() {
       gap: 20px;
     }
   }
-  </style>
+</style>
 
 <style is:global>
-* {
-  margin: 0;
-}
-.bg-green {
-  background-color: #C0E021;
-}
+  * {
+    margin: 0;
+  }
+  .bg-green {
+    background-color: #c0e021;
+  }
 
-.text-green {
-  color: #C0E021;
-}
+  .text-green {
+    color: #c0e021;
+  }
 
-.bg-black {
-  background-color: #141413;
-}
+  .bg-black {
+    background-color: #141413;
+  }
 
-.text-black {
-  color: #141413;
-}
+  .text-black {
+    color: #141413;
+  }
 
-.text-grotesk {
-  font-family: 'Space Grotesk', sans-serif;
-}
+  .text-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
 
-.text-mono {
-  font-family: 'Roboto Mono', monospace;
-}
+  .text-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
 </style>
